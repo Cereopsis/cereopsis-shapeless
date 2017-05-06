@@ -20,10 +20,10 @@ class ShapeTest extends FlatSpec with MustMatchers {
 		case class Fullname(first: String, last: String)
 		case class Person(name: Fullname, age: Int, employed: Boolean)
 		
-		val people = List(Person(Fullname("John","Walker"),53,true),Person(Fullname("Renny","Walker"),15,false))
+		val people = List(Person(Fullname("John","Walker"),35,true),Person(Fullname("Jiminy","Cricket"),88,false))
 		val csv = CsvEncoder.writeCsv(people)
-		csv must equal("""John,Walker,53,yes
-			              |Renny,Walker,15,no""".stripMargin)
+		csv must equal("""John,Walker,35,yes
+			              |Jiminy,Cricket,88,no""".stripMargin)
 	}
 	
 	"Co-product types" should "work even if they have different numbers of fields" in {
