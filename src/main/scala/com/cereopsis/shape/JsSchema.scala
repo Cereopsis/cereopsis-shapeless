@@ -47,7 +47,7 @@ object JsSchema extends App {
 	override def main(args: Array[String]) {
 		val output = 
 			 args.toList
-                 .flatMap(xs => readFile(xs))
+         .flatMap(xs => readFile(xs))
 				 .flatMap(o  => o.asOpt[JsObject])
 				 .flatMap(o => apis(o))
 				 /*
